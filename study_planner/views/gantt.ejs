@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <%- include('partials/global-head') %>
+    <%- include('partials/main-page-head') %>
+    <title>Study Planner Gantt Chart</title>
+    <link rel="stylesheet" href="/styles/global.css">
+    <link rel="stylesheet" href="/styles/gantt.css"> 
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', {'packages':['gantt']});
+        google.charts.setOnLoadCallback(drawChart);
+
+        async function drawChart() {
+            try {
+                const userId = req.session.user.id;
+                const assessments = await fetchUserAssessments(userId);
+                const tasks = await fetchUserTasks(userId);
+
+                console.log("Assessments Data:", JSON.stringify(assessments, null, 2));
+                console.log("Tasks Data:", JSON.stringify(tasks, null, 2));
+
+                var dataTable = new google.visualization.DataTable();
+                dataTable.addColumn('string', 'Task ID');
+                dataTable.addColumn('string', 'Task Name');
+                dataTable.addColumn('string', 'Resource');
+                dataTable.addColumn('date', 'Start Date');
+                dataTable.addColumn('date', 'End Date');
+                dataTable.addColumn('number', 'Duration');
+                dataTable.addColumn('number', 'Percent Complete');
+                dataTable.addColumn('string', 'Dependencies');
+
+                const assessmentMap = new Map();
+
+                // Add assessments to the data table
+                assessments.forEach(assessment => {
+                    const endDate = parseDate(assessment.AssessmentDate); 
+                    const startDate = getSemesterStartDate(endDate);
+
+                    if (!endDate || isNaN(endDate.getTime())) {
+                        console.error('Invalid date for assessment:', assessment);
+                        return;
+                    }
+
+                    console.log(`Adding Assessment: ${assessment.ModuleID} ${assessment.AssessmentName}, Start Date: ${startDate}, End Date: ${endDate}`);
+
+                    const assessmentId = `assessment-${assessment.AssessmentID}`;
+                    assessmentMap.set(assessment.AssessmentID, {id: assessmentId, endDate: endDate});
+
+                    dataTable.addRow([
+                        assessmentId,
+                        `${assessment.ModuleID} ${assessment.AssessmentName}`,
+                        assessment.ModuleName,
+                        startDate,
+                        endDate,
+                        null,
+                        null, 
+                        null
+                    ]);
+                });
+
+                // Add tasks to the data table
+                for (const task of tasks) {
+                    const endDate = parseDate(task.TaskDate);
+                    let startDate = new Date(endDate);
+                    startDate.setDate(startDate.getDate() - 7); // Set start date to 7 days before the end date
+
+                    const assessment = assessmentMap.get(task.AssessmentID);
+                    if (assessment && endDate > assessment.endDate) {
+                        startDate = new Date(assessment.endDate);
+                        startDate.setDate(startDate.getDate() - 7); 
+                    }
+
+                    const dependencies = task.AssessmentID ? assessment.id : null;
+
+                    if (!endDate || isNaN(endDate.getTime())) {
+                        console.error('Invalid date for task:', task);
+                        return;
+                    }
+
+                    console.log(`Adding Task: ${task.TaskName}, Start Date: ${startDate}, End Date: ${endDate}, Dependencies: ${dependencies}`);
+
+                    const taskId = `task-${task.TaskID}`;
+                    dataTable.addRow([
+                        taskId,
+                        `${task.TaskName} ${task.ModuleID}`,
+                        task.ModuleName,
+                        startDate,
+                        endDate,
+                        null,
+                        0, 
+                        dependencies
+                    ]);
+
+             
+                    const activities = await fetchTaskActivities(task.TaskID);
+                    for (const activity of activities) {
+                        const activityId = `activity-${activity.ActivityID}`;
+                        const activityEndDate = new Date(startDate);
+                        activityEndDate.setDate(activityEndDate.getDate() + 1); // Set activity end date to one day after the task start date
+                        console.log(`Adding Activity: ${activity.Notes}, Task: ${task.TaskName}`);
+
+                        dataTable.addRow([
+                            activityId,
+                            `${activity.Notes} ${task.ModuleID}`,
+                            task.ModuleName,
+                            startDate,
+                            activityEndDate,
+                            null,
+                            0, 
+                            taskId // Activity depends on its task
+                        ]);
+                    }
+                }
+
+                var options = {
+                    height: 600,
+                    backgroundColor: { fill: 'white' },
+                    gantt: {
+                        trackHeight: 30,
+                        barHeight: 20,
+                        barCornerRadius: 5,
+                        arrow: {
+                            angle: 45,
+                            width: 2,
+                            color: '#757575',
+                            radius: 15,
+                            length: 8,
+                            spaceAfter: 4
+                        },
+                        labelStyle: {
+                            fontName: 'Roboto-Medium',
+                            fontSize: 14,
+                            color: '#333'
+                        },
+                        criticalPathEnabled: true,
+                        criticalPathStyle: {
+                            stroke: '#e64a19',
+                            strokeWidth: 2
+                        },
+                        innerGridTrack: { fill: '#f3f4f6' },
+                        innerGridDarkTrack: { fill: '#e8eaf6' },
+                        innerGridHorizLine: {
+                            stroke: '#dcdcdc',
+                            strokeWidth: 1
+                        },
+                        percentEnabled: true,
+                        percentStyle: { fill: '#4caf50' },
+                        shadowEnabled: true,
+                        shadowColor: '#757575',
+                        shadowOffset: 2,
+                        sortTasks: true
+                    }
+                };
+
+                var chart = new google.visualization.Gantt(document.getElementById('chart_div'));
+                chart.draw(dataTable, options);
+            } catch (error) {
+                console.error("Error drawing chart:", error);
+                const errorBox = document.getElementById('error-box');
+                errorBox.textContent = `Error: ${error.message}`;
+                errorBox.classList.remove('hidden');
+            }
+        }
+
+        function parseDate(dateString) {
+            if (!dateString) return null;
+
+            if (dateString.includes('-')) {
+                const date = new Date(dateString);
+                return isNaN(date.getTime()) ? null : date;
+            } else if (dateString.includes('/')) {
+                const [day, month, year] = dateString.split('/').map(Number);
+                const date = new Date(year, month - 1, day);
+                return isNaN(date.getTime()) ? null : date;
+            } else {
+                return null;
+            }
+        }
+
+        function getSemesterStartDate(date) {
+            if (!date || isNaN(date.getTime())) return null;
+
+            const month = date.getMonth();
+
+            if (month >= 8 && month <= 11) {
+                // Fall semester (September - December)
+                return new Date(date.getFullYear(), 8, 1); // September 1st of the same year
+            } else if (month >= 0 && month <= 4) {
+                // Spring semester (January - May)
+                return new Date(date.getFullYear(), 0, 1); // January 1st of the same year
+            } else {
+                // Summer semester (May - August)
+                return new Date(date.getFullYear(), 4, 1); // May 1st of the same year
+            }
+        }
+
+        async function fetchUserAssessments(userId) {
+            const response = await fetch(`/api/user/${userId}/assessments`);
+            const assessments = await response.json();
+            return assessments;
+        }
+
+        async function fetchUserTasks(userId) {
+            const response = await fetch(`/api/user/${userId}/tasks`);
+            const tasks = await response.json();
+            return tasks;
+        }
+
+        async function fetchTaskActivities(taskId) {
+            const response = await fetch(`/api/tasks/${taskId}/activities`);
+            const activities = await response.json();
+            return activities;
+        }
+    </script>
+</head>
+<body>
+    <div class="wrapper">
+        <%- include('partials/nav-bar') %>
+        <div class="container">
+            <div class="content">
+                <div id="chart_div"></div>
+            </div>
+        </div>
+    </div>
+    <div id="error-box" class="hidden"></div>
+    <%- include('partials/error-box') %>
+</body>
+</html>

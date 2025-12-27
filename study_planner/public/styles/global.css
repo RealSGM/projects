@@ -1,0 +1,59 @@
+@font-face { 
+    font-family: Concert; src: url('../fonts/Concert.ttf'); 
+    font-family: Roboto-Medium; src: url('../fonts/Roboto-Medium.ttf'); 
+}
+
+html {
+    font-size: 16px;
+    font-family: 'Roboto-Medium', sans-serif;
+    background: hsla(216, 52%, 87%, 1);
+    max-width: 100vw;
+    max-height: 100vh;
+    overflow: hidden;
+}
+
+#error-box {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: lightgreen;
+    color: #fff;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Concert', sans-serif;
+    font-size: 16px;
+    max-width: 300px;
+    width: auto;
+    z-index: 1000;
+    transition: opacity 0.3s ease;
+}
+
+#error-box.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#error-box:after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 10px;
+    width: 0;
+    height: 0;
+    border: solid transparent;
+    border-top-color: lightgreen;
+    border-width: 10px;
+}
+
+#error-box.isError {
+    background-color: #c0392b;
+}
+
+#error-box.isError:after{
+    border-top-color: #c0392b;
+}
+
+.hidden {
+    display: none;
+}

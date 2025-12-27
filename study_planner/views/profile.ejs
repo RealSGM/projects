@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <%- include('partials/global-head') %>
+    <%- include('partials/main-page-head') %>
+    <link rel="stylesheet" href="/styles/profile-wrapper.css" />
+    <link rel="stylesheet" href="/styles/edit-profile-wrapper.css" />
+    <link rel="stylesheet" href="/styles/semesterForm.css" />
+    <link rel="stylesheet" href="/styles/fileForm.css" />
+    <script src="/js/profile.js" defer></script>
+    <script src="/js/file-management.js" defer></script>
+    <title>Study Planner - Profile</title>
+</head>
+<body>
+    <div class="wrapper">
+        <%- include('partials/nav-bar') %>
+        <div class="container">
+            <div class="content">
+                <%- include('partials/profile-wrapper') %>
+                <%- include('partials/profile-edit-wrapper') %>
+            </div>
+        </div>
+    </div>
+    <%- include('partials/error-box') %>
+</body>
+</html>

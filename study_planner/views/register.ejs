@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/global-head') %>
+    <title>Study Planner - Register</title>
+    <link rel="stylesheet" href="/styles/top-bar.css" />
+    <link rel="stylesheet" href="/styles/account-form.css" />
+</head>
+<body>
+    <%- include('partials/top-bar') %>
+
+    <%- include('partials/account-form', { 
+        title: 'Register New Account', 
+        action: '/register', 
+        buttonText: 'Register Account', 
+        link: { href: '/', text: 'Existing User?' }, 
+        fields: [
+            { type: 'email', placeholder: 'Email', name: 'email', autocomplete: 'email', required: true, min: 4, max: 50},
+            { type: 'text', placeholder: 'Forename', name: 'forename', autocomplete: 'given-name', required: true, min: 1, max: 24},
+            { type: 'text', placeholder: 'Surname', name: 'surname', autocomplete: 'family-name', required: true, min: 1, max: 24},
+            { type: 'password', placeholder: 'Password', name: 'password', autocomplete: 'new-password', required: true, min: 4, max: 24},
+            { type: 'password', placeholder: 'Confirm Password', name: 'confirm', autocomplete: 'new-password', required: true, min: 4, max: 24}
+        ] 
+    }) %>
+
+    <%- include('partials/error-box') %>
+</body>
+</html>
