@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Account</title>
+        <%- include("partials/head") %>
+        <link rel="stylesheet" href="/css/account.css">
+        <link rel="stylesheet" href="/css/shared/auth.css">
+        <link rel="stylesheet" href="/css/shared/order.css">
+        <script src="/js/account.js" defer></script>
+    </head>
+
+    <body>
+
+        <%- include("partials/header", { data: data }) %>
+
+        <%- include("partials/toast") %>
+
+        <main class="account-container">
+
+            <section class="profile-card">
+                <div class="profile-avatar">
+                    <img src="/images/default_avatar.jpg" alt="Profile">
+                    <span class="role-tag"><%= data.role.toUpperCase() %></span>
+                </div>
+
+                <div class="profile-info">
+                    <h2><%= user.forename %> <%= user.surname %></h2>
+                    <p><%= user.email %></p>
+                </div>
+            </section>
+
+            <section class="account-card">
+
+                <h3 class="section-title">Profile Details</h3>
+            
+                <form action="/account/update-profile" method="POST" class="account-form">
+                    <div class="input-icon">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" name="forename" placeholder="First Name" required>
+                    </div>
+            
+                    <div class="input-icon">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" name="surname" placeholder="Surname" required>
+                    </div>
+            
+                    <div class="input-icon">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+                    </div>
+            
+                    <button type="submit" class="save-btn">Update Name</button>
+                </form>
+            
+            </section>
+            
+            <section class="account-card">
+            
+                <h3 class="section-title">Change Password</h3>
+            
+                <form action="/account/update-password" method="POST" class="account-form">
+                    <div class="input-icon">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" name="current_password" placeholder="Current Password" required>
+                    </div>
+            
+                    <div class="input-icon">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" name="new_password" placeholder="New Password" required>
+                    </div>
+            
+                    <div class="input-icon">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" name="confirm_new_password" placeholder="Confirm New Password" required>
+                    </div>
+            
+                    <button type="submit" class="save-btn">Update Password</button>
+                </form>
+            
+            </section>
+            
+
+            <% if (data.role === "seller") { %>
+            <section class="account-card">
+                <h3 class="section-title">Sales Statistics</h3>
+
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <h4>Total Sales</h4>
+                        <p><%= stats.totalSales %></p>
+                    </div>
+                
+                    <div class="stat-box">
+                        <h4>Revenue</h4>
+                        <p>£<%= stats.totalRevenue %></p>
+                    </div>
+                
+                    <div class="stat-box">
+                        <h4>Products Listed</h4>
+                        <p><%= stats.productsListed %></p>
+                    </div>
+                </div>
+            </section>
+            <% } %>
+
+            <% if (data.role === "buyer") { %>
+                <section class="account-card">
+                    <h3 class="section-title">Order History</h3>
+                
+                    <div class="order-list">
+                        <% orders.forEach(order => { %>
+                            <%- include("partials/order", { order: order, products: products }) %>
+                        <% }) %>
+                
+                    </div>
+                </section>
+            <% } %>
+        </main>
+
+        <%- include("partials/dock", { data: data }) %>
+
+    </body>
+</html>

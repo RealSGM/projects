@@ -1,0 +1,52 @@
+<form method="POST" action="<%= formAction %>" enctype="multipart/form-data" class="order-card">
+
+    <label class="order-select">
+        <select name="fishType" required>
+            <% const fishList = ["Salmon","Tuna","Cod","Trout","Mackerel","Sardine","Herring","Snapper","Swordfish","Halibut"]; %>
+
+            <% fishList.forEach(fish => { %>
+                <option value="<%= fish %>" 
+                        <%= listing.name === fish ? "selected" : "" %>>
+                    <%= fish %>
+                </option>
+            <% }) %>
+        </select>
+    </label>
+
+    <label class="order-label">
+        <span>Price (£)</span>
+        <input 
+            name="price" 
+            type="number" 
+            step="0.01"
+            value="<%= listing.price %>"
+            required
+        >
+    </label>
+
+    <label class="order-label">
+        <span>Quantity</span>
+        <input 
+            name="quantity" 
+            type="number" 
+            min="1"
+            value="<%= listing.quantity %>"
+            required
+        >
+    </label>
+
+    <label class="order-label order-textarea">
+        <span>Description</span>
+        <textarea name="description" required><%= listing.description %></textarea>
+    </label>
+
+    <label class="order-file">
+        <span>Upload Image</span>
+        <input type="file" name="image">
+    </label>
+
+    <button type="submit" class="order-submit">
+        <%= buttonText %>
+    </button>
+
+</form>

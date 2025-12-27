@@ -1,0 +1,133 @@
+.help-container {
+    padding: 1.4rem;
+    margin-bottom: 90px;
+    max-width: 600px;
+    margin-inline: auto;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.title-container {
+    padding: 1.4rem;
+    border-radius: 18px;
+    background: #f7f9fa;
+    border: 1px solid rgba(255,255,255,0.5);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.06);
+    margin-bottom: 1.8rem;
+    transform: translateY(8px);
+    animation: fadeInUp 0.45s ease forwards;
+    opacity: 0;
+}
+
+.help-title {
+    text-align: center;
+    font-size: 1.65rem;
+    font-weight: 800;
+    color: #2F6F74;
+    margin: 0;
+    letter-spacing: -0.3px;
+}
+
+.help-section {
+    margin-bottom: 1.6rem;
+}
+
+.glass-card {
+    padding: 1.6rem;
+    border-radius: 18px;
+    background: #f7f9fa;
+    border: 1px solid rgba(255,255,255,0.5);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.06);
+    animation: fadeInUp 0.45s ease forwards;
+    opacity: 0;
+    transform: translateY(8px);
+}
+
+.section-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: -0.2px;
+    color: #2F6F74;
+    margin-bottom: 0.9rem;
+}
+
+.faq-item {
+    margin-bottom: 0.55rem;
+    border-radius: 14px;
+    background: #ffffff;
+    border: 1px solid rgba(0,0,0,0.04);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+
+.faq-question {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    border: 0;
+    background: none;
+    font-size: 0.97rem;
+    font-weight: 600;
+    color: #2F6F74;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.25s ease, color 0.2s ease;
+}
+
+.faq-question:hover {
+    background: #e5f3f5;
+    color: #27595d;
+}
+
+.faq-answer {
+    padding: 1rem;
+    font-size: 0.95rem;
+    color: #4a4f55;
+    line-height: 1.55;
+    display: none;
+}
+
+.support-text {
+    font-size: 1rem;
+    color: #4a4f55;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.contact-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.contact-btn {
+    text-decoration: none;
+    padding: 0.9rem 1.1rem;
+    border-radius: 14px;
+    background: #2F6F74;
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.97rem;
+    letter-spacing: -0.2px;
+    text-align: center;
+    transition: background 0.2s ease, transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55rem;
+}
+
+.contact-btn:hover {
+    background: #27595d;
+    transform: translateY(-2px);
+}
+
+.contact-btn:active {
+    transform: scale(0.95);
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

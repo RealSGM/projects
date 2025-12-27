@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Checkout</title>
+    <link rel="stylesheet" href="/css/checkout.css">
+    <%- include("partials/head") %>
+</head>
+<div id="payment-popup" class="payment-popup hidden">
+    Redirecting to payment processor...
+</div>
+<body>
+
+    <%- include("partials/header", { data: data }) %>
+    
+    <main class="checkout-container">
+
+        <h2 class="checkout-title">Shopping Basket</h2>
+        
+        <div class="basket-items">
+            <% if (data.cart.length === 0) { %>
+                <p>Your basket is empty.</p>
+            <% } else { %>
+                <% data.cart.forEach(item => { %>
+                    <%- include("partials/basket_item", { item: item }) %>
+                <% }) %>
+            <% } %>
+        </div>
+    
+        <div class="subtotal">
+            Total (<%= data.cart.reduce((sum, item) => sum + item.quantity, 0) %> Items):
+            <strong>
+                £<%= data.cart.reduce((sum, item) => sum + (item.price * item.quantity), 0).toFixed(2) %>
+            </strong>
+        </div>
+        <div id="undo-bar" class="undo-bar <%= data.showUndo ? '' : 'hidden' %>">
+            <span>Item removed.</span>
+            <button id="undo-btn">Undo</button>
+        </div>
+    
+        <div class="payment-buttons">
+            <button class="pay card">Pay with Card</button>
+            <button class="pay apple">Buy with Apple Pay</button>
+            <button class="pay paypal">Pay with PayPal</button>
+        </div>
+    
+    </main>
+    
+
+    <link rel="stylesheet" href="/css/checkout.css">
+
+    <%- include("partials/dock", { data: data }) %>
+
+</body>
+<script src="/js/checkout.js" defer></script>
+</html>

@@ -1,0 +1,31 @@
+<div class="basket-item" data-id="<%= item.id %>">
+    
+    <img src="<%= item.image %>" alt="<%= item.name %>">
+
+    <div class="item-info">
+        <strong><%= item.name %> (<%= item.owner || "Unknown" %>)</strong>
+
+        <div class="qty-row">
+            <div class="qty-pill">
+                <button class="pill-btn minus" data-id="<%= item.id %>">−</button>
+                <span class="pill-value"><%= item.quantity %></span>
+                <button class="pill-btn plus" data-id="<%= item.id %>">+</button>
+            </div>
+        </div>
+
+        <!-- subtotal area (new) -->
+        
+    </div>
+
+    <button class="delete-btn" data-id="<%= item.id %>">
+        <i class="fa-solid fa-trash-can"></i>
+    </button>
+
+    <!-- actual price per unit -->
+    
+    <div class="item-subtotal">
+            £<span class="subtotal-value"><%= (item.price * item.quantity).toFixed(2) %></span>
+        </div>
+    <div class="item-price" data-price="<%= item.price %>"></div>
+</div>
+

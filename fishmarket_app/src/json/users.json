@@ -1,0 +1,128 @@
+[
+  {
+    "email": "johndoe@gmail.com",
+    "password": "a",
+    "role": "buyer",
+    "forename": "John",
+    "surname": "Doe"
+  },
+  {
+    "email": "a@a",
+    "password": "a",
+    "role": "buyer",
+    "forename": "John",
+    "surname": "Doe"
+  },
+  {
+    "email": "b@b",
+    "password": "b",
+    "role": "seller",
+    "forename": "Jane",
+    "surname": "Smith"
+  },
+  {
+    "email": "emma.wilson@example.com",
+    "password": "password123",
+    "role": "buyer",
+    "forename": "Emma",
+    "surname": "Wilson"
+  },
+  {
+    "email": "liam.jones@example.com",
+    "password": "securepass",
+    "role": "seller",
+    "forename": "Liam",
+    "surname": "Jones"
+  },
+  {
+    "email": "olivia.davis@example.com",
+    "password": "mypassword",
+    "role": "buyer",
+    "forename": "Olivia",
+    "surname": "Davis"
+  },
+  {
+    "email": "noah.miller@example.com",
+    "password": "letmein",
+    "role": "seller",
+    "forename": "Noah",
+    "surname": "Miller"
+  },
+  {
+    "email": "ava.moore@example.com",
+    "password": "password456",
+    "role": "buyer",
+    "forename": "Ava",
+    "surname": "Moore"
+  },
+  {
+    "email": "william.taylor@example.com",
+    "password": "qwerty123",
+    "role": "seller",
+    "forename": "William",
+    "surname": "Taylor"
+  },
+  {
+    "email": "sophia.anderson@example.com",
+    "password": "abc123",
+    "role": "buyer",
+    "forename": "Sophia",
+    "surname": "Anderson"
+  },
+  {
+    "email": "james.thomas@example.com",
+    "password": "passw0rd",
+    "role": "seller",
+    "forename": "James",
+    "surname": "Thomas"
+  },
+  {
+    "email": "mia.jackson@example.com",
+    "password": "ilovepizza",
+    "role": "buyer",
+    "forename": "Mia",
+    "surname": "Jackson"
+  },
+  {
+    "email": "elijah.white@example.com",
+    "password": "hunter2",
+    "role": "seller",
+    "forename": "Elijah",
+    "surname": "White"
+  },
+  {
+    "email": "z@z",
+    "password": "z",
+    "role": "buyer",
+    "forename": "z",
+    "surname": "z"
+  },
+  {
+    "email": "u@u",
+    "password": "u",
+    "role": "buyer",
+    "forename": "u",
+    "surname": "u"
+  },
+  {
+    "email": "i@i",
+    "password": "i",
+    "role": "buyer",
+    "forename": "i",
+    "surname": "i"
+  },
+  {
+    "email": "h@h",
+    "password": "h",
+    "role": "buyer",
+    "forename": "h",
+    "surname": "h"
+  },
+  {
+    "email": "f@f",
+    "password": "f",
+    "role": "buyer",
+    "forename": "f",
+    "surname": "f"
+  }
+]

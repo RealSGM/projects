@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Create Fish Listing</title>
+    <%- include("partials/head") %>
+    <link rel="stylesheet" href="/css/create_listing.css">
+</head>
+
+<body>
+
+<%- include("partials/header", { data: data }) %>
+
+<main class="order-wrapper">
+
+    <div class="order-hero">
+        <h2>Create Fish Listing</h2>
+        <p class="order-subtitle">
+            Add a new fish to the marketplace by completing the form below.
+        </p>
+    </div>
+
+    <%- include("partials/listing_form", {
+        formAction: "/listings/create_listing",
+        buttonText: "Create Listing",
+        listing: listing,
+    }) %>
+    
+
+</main>
+
+<%- include("partials/dock", { data: data }) %>
+
+</body>
+</html>

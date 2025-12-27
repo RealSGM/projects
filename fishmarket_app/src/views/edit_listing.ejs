@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Edit Listing</title>
+    <%- include("partials/head") %>
+    <link rel="stylesheet" href="/css/create_listing.css">
+</head>
+
+<body>
+
+<%- include("partials/header", { data: data }) %>
+
+<main class="order-wrapper">
+
+    <div class="order-hero">
+        <h2>Edit Listing</h2>
+        <p class="order-subtitle">Modify your existing listing below.</p>
+        <form method="POST" action="/listings/delete/<%= listing.id %>" id="delete-form">
+            <button type="button" id="delete-btn" class="delete-listing-btn">
+                Delete Listing
+            </button>
+        </form>
+    
+    </div>
+
+    <form method="POST" action="/listings/edit/<%= listing.id %>" class="order-card">
+
+        <%- include("partials/listing_form", {
+            formAction: `/listings/edit/${listing.id}`,
+            buttonText: "Save Changes",
+            listing: listing,
+        }) %>
+
+    
+</main>
+
+<%- include("partials/dock", { data: data }) %>
+
+</body>
+</html>

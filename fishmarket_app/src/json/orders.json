@@ -1,0 +1,22 @@
+[
+    {
+        "email": "a@a",
+        "orders": [
+            {
+                "orderId": 1,
+                "products": [
+                    {
+                        "id": 1,
+                        "quantity": 2
+                    },
+                    {
+                        "id": 2,
+                        "quantity": 12
+                    }
+                ],
+                "date": "2024-06-15",
+                "total": 291.86
+            }
+        ]
+    }
+]

@@ -1,0 +1,189 @@
+[
+  {
+    "id": 1,
+    "email": "a@a",
+    "name": "Halibut",
+    "seller": "John Doe",
+    "description": "Fresh premium Halibut from Billingsgate market, perfect for grilling or baking.",
+    "quantity": 167,
+    "image": "/images/halibut.jpg",
+    "price": 25.99,
+    "is_deleted": false
+  },
+  {
+    "id": 2,
+    "email": "liam.jones@example.com",
+    "name": "Tuna",
+    "seller": "Liam Jones",
+    "description": "High-quality tuna, perfect for sushi or grilling.",
+    "quantity": 95,
+    "image": "/images/tuna.jpeg",
+    "price": 22.99,
+    "is_deleted": false
+  },
+  {
+    "id": 3,
+    "email": "noah.miller@example.com",
+    "name": "Cod",
+    "seller": "Noah Miller",
+    "description": "Fresh cod fillets, great for frying or baking.",
+    "quantity": 150,
+    "image": "/images/cod.jpg",
+    "price": 18.99,
+    "is_deleted": false
+  },
+  {
+    "id": 4,
+    "email": "william.taylor@example.com",
+    "name": "Shrimp",
+    "seller": "William Taylor",
+    "description": "Juicy and fresh shrimp, perfect for pasta or grilling.",
+    "quantity": 200,
+    "image": "/images/shrimp.jpg",
+    "price": 15.99,
+    "is_deleted": false
+  },
+  {
+    "id": 5,
+    "email": "james.thomas@example.com",
+    "name": "Lobster",
+    "seller": "James Thomas",
+    "description": "Premium lobster, ideal for a luxurious dinner.",
+    "quantity": 50,
+    "image": "/images/lobster.jpg",
+    "price": 45.99,
+    "is_deleted": false
+  },
+  {
+    "id": 6,
+    "email": "elijah.white@example.com",
+    "name": "Crab",
+    "seller": "Elijah White",
+    "description": "Fresh crab, perfect for soups or salads.",
+    "quantity": 80,
+    "image": "/images/crab.jpg",
+    "price": 29.99,
+    "is_deleted": false
+  },
+  {
+    "id": 7,
+    "email": "a@a",
+    "name": "Mackerel",
+    "seller": "John Doe",
+    "description": "Fresh mackerel, great for grilling or smoking.",
+    "quantity": 140,
+    "image": "/images/mackerel.jpg",
+    "price": 12.99,
+    "is_deleted": false
+  },
+  {
+    "id": 8,
+    "email": "liam.jones@example.com",
+    "name": "Mackerel",
+    "seller": "Liam Jones",
+    "description": "Premium mackerel steaks, ideal for grilling.",
+    "quantity": 70,
+    "image": "/images/mackerel.jpg",
+    "price": 14.99,
+    "is_deleted": false
+  },
+  {
+    "id": 9,
+    "email": "noah.miller@example.com",
+    "name": "Cod",
+    "seller": "Noah Miller",
+    "description": "Fresh cod fillets, great for frying or baking.",
+    "quantity": 130,
+    "image": "/images/cod.jpg",
+    "price": 18.99,
+    "is_deleted": false
+  },
+  {
+    "id": 10,
+    "email": "william.taylor@example.com",
+    "name": "Scallops",
+    "seller": "William Taylor",
+    "description": "Fresh scallops, perfect for searing or grilling.",
+    "quantity": 90,
+    "image": "/images/scallops.jpg",
+    "price": 34.99,
+    "is_deleted": false
+  },
+  {
+    "id": 11,
+    "email": "james.thomas@example.com",
+    "name": "Oysters",
+    "seller": "James Thomas",
+    "description": "Fresh oysters, ideal for a luxurious appetizer.",
+    "quantity": 60,
+    "image": "/images/oysters.jpg",
+    "price": 39.99,
+    "is_deleted": false
+  },
+  {
+    "id": 12,
+    "email": "emma.wilson@example.com",
+    "name": "Halibut",
+    "seller": "Emma Wilson",
+    "description": "Fresh premium Halibut from the local market, perfect for grilling or baking.",
+    "quantity": 100,
+    "image": "/images/halibut.jpg",
+    "price": 25.99,
+    "is_deleted": false
+  },
+  {
+    "id": 13,
+    "email": "oliver.brown@example.com",
+    "name": "Salmon",
+    "seller": "Oliver Brown",
+    "description": "Delicious and fresh salmon, sourced sustainably.",
+    "quantity": 80,
+    "image": "/images/salmon.jpg",
+    "price": 19.99,
+    "is_deleted": false
+  },
+  {
+    "id": 14,
+    "email": "sophia.davis@example.com",
+    "name": "Tuna",
+    "seller": "Sophia Davis",
+    "description": "High-quality tuna, perfect for sushi or grilling.",
+    "quantity": 70,
+    "image": "/images/tuna.jpeg",
+    "price": 22.99,
+    "is_deleted": false
+  },
+  {
+    "id": 15,
+    "email": "b@b",
+    "name": "Trout",
+    "seller": "Jane Smith",
+    "description": "Fresh trout, perfect for eating.\r\nSALE",
+    "quantity": 11,
+    "image": "/images/cod.JPG",
+    "price": 14.99,
+    "is_deleted": false
+  },
+  {
+    "id": 16,
+    "email": "b@b",
+    "name": "Snapper",
+    "seller": "Jane Smith",
+    "description": "Snapper",
+    "quantity": 140,
+    "image": "/images/cod.JPG",
+    "price": 17.99,
+    "is_deleted": false
+  },
+  {
+    "id": 17,
+    "email": "b@b",
+    "name": "Snapper",
+    "seller": "Jane Smith",
+    "description": "New Snapper",
+    "quantity": 100,
+    "image": "/images/cod.JPG",
+    "price": 15.99,
+    "is_deleted": false
+  }
+]

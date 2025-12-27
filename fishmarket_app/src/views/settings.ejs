@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Settings</title>
+        <link rel="stylesheet" href="/css/settings.css">
+        <script src="/js/settings.js" defer></script>
+        <script src="/js/global.js" defer></script>
+        <%- include("partials/head") %>
+    </head>
+
+    <body>
+
+        <%- include("partials/header", { data: data }) %>
+
+        <main class="settings-container">
+
+            <div class="title-card">
+                <h1 class="settings-title" data-i18n="settings.title">Settings</h1>
+            </div>
+
+            <section class="settings-card">
+
+                <div class="setting-item">
+                    <div class="setting-label" data-i18n="settings.dark_mode_button">
+                        <i class="fa-solid fa-moon"></i>
+                        Dark Mode
+                    </div>
+
+                    <label class="switch">
+                        <input type="checkbox" id="toggle-darkmode">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="setting-item">
+                    <div class="setting-label" data-i18n="settings.font_size_label">
+                        <i class="fa-solid fa-text-height"></i>
+                        Font Size
+                    </div>
+
+                    <select class="setting-select" id="font-size-select">
+                        <option value="normal" data-i18n="settings.normal_size">Normal</option>
+                        <option value="large" data-i18n="settings.large_size">Large</option>
+                        <option value="xl" data-i18n="settings.extra_large_size">Extra Large</option>
+                    </select>
+                </div>
+
+                <div class="setting-item">
+                    <div class="setting-label" data-i18n="settings.language_label">
+                        <i class="fa-solid fa-language"></i>
+                        Language
+                    </div>
+
+                    <select class="setting-select" id="lang">
+                        <option value="en" data-i18n="settings.english_option">English</option>
+                        <option value="es" data-i18n="settings.spanish_option">Spanish</option>
+                        <option value="fr" data-i18n="settings.french_option">French</option>
+                    </select>
+                </div>
+
+                <div class="setting-item">
+                    <div class="setting-label" data-i18n="settings.text_to_speech">
+                        <i class="fa-solid fa-volume-high"></i>
+                        Text to Speech
+                    </div>
+
+                    <label class="switch">
+                        <input type="checkbox" id="toggle-tts">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+            </section>
+
+        </main>
+
+            <%- include("partials/dock", { data: data }) %>
+
+    </body>
+</html>

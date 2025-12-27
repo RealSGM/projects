@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Marketplace</title>
+        <link rel="stylesheet" href="/css/marketplace.css">
+        <link rel="stylesheet" href="/css/cart_popup.css">
+        <%- include("partials/head") %>
+    </head>
+
+    <body>
+
+        <%- include("partials/header", { data: data }) %>
+        <%- include("partials/cart_popup") %>
+
+        <main class="stock-list" id="productList">
+            <% products.forEach(product => { %>
+
+                <% 
+                    const safeTitle = (product.title || "").toLowerCase();
+                    const safeDesc  = (product.description || "").toLowerCase();
+                %>
+
+                <% if (!product.is_deleted) { %>
+                    <div class="product-card"
+                        data-title="<%= safeTitle %>"
+                        data-desc="<%= safeDesc %>"
+                        data-price="<%= product.price %>"
+                        data-seller="<%= product.seller.toLowerCase() %>"
+                        data-quantity="<%= product.quantity %>">
+                        <%- include("partials/auction", { product: product, role: data.role, email: email }) %>
+                    </div>
+                <% } %>
+
+            <% }) %>
+        </main>
+
+        <%- include("partials/dock", { data: data }) %>
+
+        <script src="/js/marketplace-search.js" defer></script>
+        <script src="/js/add_to_cart.js" defer></script>
+    </body>
+</html>

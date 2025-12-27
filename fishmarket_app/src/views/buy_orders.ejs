@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Your Buy Orders</title>
+		<%- include("partials/head") %>
+		<link rel="stylesheet" href="/css/reserve.css">
+		<link rel="stylesheet" href="/css/buy_orders.css">
+	</head>
+	<body>
+		
+		<%- include("partials/header", { data: data }) %>
+
+		<div class="order-wrapper">
+			<div class="orders-header">
+				<h2>Your Buy Orders</h2>
+			</div>
+			
+			<div class="orders-list">
+				<% orders.forEach(order => { %>
+					<% if (!order.is_deleted) { %>
+						<%- include("partials/buy_order", { order: order }) %>
+					<% } %>
+				<% }) %>
+			</div>
+			<div id="ordersContainer" class="orders-list"></div>
+		</div>
+
+		<%- include("partials/dock", { data: data }) %>
+
+	</body>
+</html>

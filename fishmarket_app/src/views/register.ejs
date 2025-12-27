@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Register an Account</title>
+        <link rel="stylesheet" href="/css/shared/auth.css">
+        <script src="/js/register.js"></script>
+        <%- include("partials/head") %>
+    </head>
+
+    <body>
+
+        <%- include("partials/header", { data: req_data }) %>
+
+        <%- include("partials/toast") %>
+
+        <main class="auth-container">
+            <div class="glass-card">
+
+                <h1 class="auth-title">Account Registration</h1>
+
+                <form id="registerForm" action="/register" method="POST" class="auth-form">
+                    <div class="role-section">
+                        <label class="role-label">Registering as</label>
+                        <div class="role-toggle">
+                            <input type="radio" id="buyer" name="role" value="buyer" checked>
+                            <input type="radio" id="seller" name="role" value="seller">
+                            <label for="buyer" class="toggle-option">Buyer</label>
+                            <label for="seller" class="toggle-option">Seller</label>
+                            <div class="toggle-slider"></div>
+                        </div>
+                    </div>
+
+                    <div class="input-icon"><i class="fa-solid fa-envelope"></i><input type="email" name="email" placeholder="Email" required></div>
+                    <div class="input-icon"> <i class="fa-solid fa-user"></i><input type="text" name="first_name" placeholder="First Name" required></div>
+                    <div class="input-icon"> <i class="fa-solid fa-user"></i><input type="text" name="surname" placeholder="Surname" required></div>
+                    <div class="input-icon"> <i class="fa-solid fa-lock"></i><input type="password" name="password" placeholder="Password" required></div>
+                    <div class="input-icon"> <i class="fa-solid fa-lock"></i><input type="password" name="confirm_password" placeholder="Confirm Password" required></div>
+                    
+                    <button type="submit" class="auth-btn">Create Account</button>
+                </form>
+
+                <p class="auth-alt">Existing User? <a href="/login">Log In!</a></p>
+            </div>
+
+        </main>
+
+    </body>
+</html>

@@ -1,0 +1,57 @@
+<header class="top-bar <%= data.active_tab === 'marketplace' ? 'marketplace' : '' %>">
+    <div class="header-left">
+        <% if (data.header_name !== "Billingsgate Fish Market") { %>
+            <a href="/messages" class="back-btn">
+                <i class="fa-solid fa-chevron-left"></i>
+            </a>
+        <% } %>
+        <h1 class="app-title" data-i18n="title"><%= data.header_name %></h1>
+    </div>
+
+    <% if (data.active_tab === 'marketplace') { %>
+        <div class="header-center">
+            <div class="market-search">
+                <input
+                    type="text"
+                    id="marketSearchInput"
+                    placeholder="Search products..."
+                >
+            </div>
+
+            <div class="market-filters">
+                <select id="priceFilter">
+                    <option value="">All Prices</option>
+                    <option value="low">Under £20</option>
+                    <option value="mid">£20 - £30</option>
+                    <option value="high">Over £30</option>
+                </select>
+
+                <select id="sortBy">
+                    <option value="">Sort By</option>
+                    <option value="price-asc">Price: Low → High</option>
+                    <option value="price-desc">Price: High → Low</option>
+                    <option value="name-asc">Name: A → Z</option>
+                    <option value="name-desc">Name: Z → A</option>
+                </select>
+            </div>
+        </div>
+    <% } %>
+
+    <% if (data.include_settings) { %>
+        <div class="header-right">
+            <button id="menu-toggle" class="hamburger">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+
+        <div id="menu-dropdown" class="menu-dropdown">
+            <a href="/settings"  class="menu-item <%= data.active_tab==='settings'?'active':'' %>" data-i18n="hamburger.settings"><i class="fa-solid fa-gear"></i> Settings</a>
+            <a href="/account"   class="menu-item <%= data.active_tab==='account'?'active':'' %>" data-i18n="hamburger.account"><i class="fa-solid fa-user"></i> Account</a>
+            <a href="/help"      class="menu-item <%= data.active_tab==='help'?'active':'' %>" data-i18n="hamburger.help"><i class="fa-solid fa-question"></i> Help</a>
+            <a href="/logout"    class="menu-item <%= data.active_tab==='logout'?'active':'' %>" data-i18n="hamburger.logout"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+        </div>
+
+        <div id="menu-overlay" class="menu-overlay"></div>
+    <% } %>
+
+</header>

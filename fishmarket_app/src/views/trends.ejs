@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Market Trends</title>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <link rel="stylesheet" href="/css/trends.css">
+        <%- include("partials/head") %>
+    </head>
+
+    <body>
+        <%- include("partials/header", { data: data }) %>
+
+
+        <main>
+            <div class="trends-container">  
+                <h2 class="trend-title">Fish Sales Over Time</h2>
+                <div class="chart-wrapper">
+                    <canvas id="fishChart"></canvas>
+                </div>
+    
+                <div class="trend-filters">
+                    <button class="filter-btn active" data-range="week">Week</button>
+                    <button class="filter-btn" data-range="month">Month</button>
+                    <button class="filter-btn" data-range="year">Year</button>
+                </div>
+            </div>        
+        </main>
+        
+            <%- include("partials/dock", { data: data }) %>
+
+
+        <script src="/js/trends.js"></script>
+    </body>
+</html>

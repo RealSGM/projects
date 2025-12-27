@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Login</title>
+        <link rel="stylesheet" href="/css/shared/auth.css">
+        <script src="/js/login.js"></script>
+        <%- include("partials/head") %>
+    </head>
+
+    <body>
+
+        <%- include("partials/header", { include_settings: false }) %>
+
+        <%- include("partials/toast") %>
+
+        <main class="auth-container">
+            <div class="glass-card">
+
+                <h1 class="auth-title">Account Login</h1>
+
+                <form id="loginForm" action="/login" method="POST" class="auth-form">
+
+                    <div class="input-icon">
+                        <i class="fa-solid fa-envelope"></i>
+                        <input type="email" name="email" placeholder="Email" required>
+                    </div>
+
+                    <div class="input-icon password-field">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" name="password" id="login_password" placeholder="Password" required>
+                    </div>
+
+                    <button type="submit" class="auth-btn">Log In</button>
+                </form>
+
+                <p class="auth-alt">New User? <a href="/register">Register Here!</a></p>
+
+            </div>
+        </main>
+
+    </body>
+</html>

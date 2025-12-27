@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Reserve</title>
+		<%- include("partials/head") %>
+		<link rel="stylesheet" href="/css/reserve.css">
+	</head>
+
+	<body>
+
+	<%- include("partials/header", { data: data }) %>
+
+	<main class="order-wrapper">
+
+		<div class="order-hero">
+			<h2>Create Buy Order</h2>
+			<p class="order-subtitle">
+				Reserve some fish by creating a buy order below.
+			</p>
+	
+			<a href="/buy_orders" class="view-orders-btn">
+				View Your Buy Orders
+			</a>
+		</div>
+	
+		<form method="POST" action="/reserve" class="order-card">
+	
+			<select name="fishType" required>
+				<option value="" disabled selected>Select Fish Type</option>
+				<option value="Salmon">Salmon</option>
+				<option value="Tuna">Tuna</option>
+				<option value="Cod">Cod</option>
+				<option value="Trout">Trout</option>
+				<option value="Mackerel">Mackerel</option>
+				<option value="Sardine">Sardine</option>
+				<option value="Herring">Herring</option>
+				<option value="Snapper">Snapper</option>
+				<option value="Swordfish">Swordfish</option>
+				<option value="Halibut">Halibut</option>
+			</select>
+	
+			<label class="order-label">
+				<span>Max Price</span>
+				<input name="maxPrice" type="number" step="0.01" min="0" placeholder="£0.00" required>
+			</label>
+			
+			<label class="order-label">
+				<span>Quantity</span>
+				<input name="quantity" type="number" min="1" value="1" required>
+			</label>
+			
+			<label class="order-label">
+				<span>Delivery Day</span>
+				<input name="deliveryDay" type="date" required>
+			</label>
+	
+			<button type="submit" class="order-submit">
+				Place Buy Order
+			</button>
+	
+		</form>
+	
+	</main>
+		
+
+	<%- include("partials/dock", { data: data }) %>
+
+	</body>
+</html>

@@ -1,0 +1,76 @@
+[
+  {
+    "id": "1",
+    "name": "Harbour Fresh",
+    "lastMessage": "Order confirmed - we’ll pack it for collection at my spot.",
+    "messages": [
+      { "sender": "Harbour Fresh", "text": "Morning! Fresh cod just landed at Billingsgate - today’s auction lot #14.", "time": "10:01" },
+      { "sender": "me", "text": "Nice, I just placed a bid for 2kg.", "time": "10:05" },
+      { "sender": "Harbour Fresh", "text": "Your bid went through. If you win, want it filleted or whole?", "time": "10:20" },
+      { "sender": "me", "text": "Filleted please.", "time": "10:22" },
+      { "sender": "Harbour Fresh", "text": "Got it. We’ll prepare the fillets for you.", "time": "10:25" },
+      { "sender": "Harbour Fresh", "text": "Sorry for the delay - the auction was busier than expected today.", "time": "11:45" },
+      { "sender": "me", "text": "No worries, I understand. Let me know when it’s ready for pickup.", "time": "11:50" },
+      { "sender": "Harbour Fresh", "text": "Order confirmed - we’ll pack it for collection at my spot.", "time": "12:10" }
+    ]
+  },
+  {
+    "id": "2",
+    "name": "Support",
+    "lastMessage": "Let me know if it updates now!",
+    "messages": [
+      { "sender": "Support", "text": "We’re checking the issue with your auction tracking not refreshing.", "time": "09:30" },
+      { "sender": "me", "text": "Thanks, my bids weren’t updating in real time.", "time": "09:45" },
+      { "sender": "Support", "text": "We’ve resynced the auction servers - you should see live bid changes again.", "time": "10:10" },
+      { "sender": "Support", "text": "Let me know if it updates now!", "time": "10:40" }
+    ]
+  },
+  {
+    "id": "3",
+    "name": "Emma Wilson",
+    "lastMessage": "See you there!",
+    "messages": [
+      { "sender": "Emma", "text": "New sea bass lot just posted - super fresh from this morning’s haul.", "time": "11:15" },
+      { "sender": "me", "text": "How big are they?", "time": "11:18" },
+      { "sender": "Emma", "text": "Around 600–700g each. They’ll go quick once the auction starts.", "time": "11:20" },
+      { "sender": "me", "text": "Alright, I’ve put in a bid for two 😊", "time": "11:23" },
+      { "sender": "Emma", "text": "Got it - if you win, I’ll label them for pickup. See you there!", "time": "11:30" }
+    ]
+  },
+  {
+    "id": "4",
+    "name": "Alex Porter",
+    "lastMessage": "See you at Billingsgate!",
+    "messages": [
+      { "sender": "Alex", "text": "Heading to Billingsgate later - want me to check any auction lots for you?", "time": "16:02" },
+      { "sender": "me", "text": "Yeah, see if there are oysters up for bidding today.", "time": "16:05" },
+      { "sender": "Alex", "text": "Will do. Yesterday’s were from Colwyn Bay and went cheap - might be more today.", "time": "16:07" },
+      { "sender": "me", "text": "Nice. Anything big happening this morning?", "time": "16:10" },
+      { "sender": "Alex", "text": "Yep - a trawler unloaded a ton of haddock and mackerel. They’re going on the midday auction.", "time": "16:11" },
+      { "sender": "me", "text": "Fresh mackerel always does well. People don’t bid enough on it.", "time": "16:12" },
+      { "sender": "Alex", "text": "Seriously. Grill it with lemon and done - bargain fish.", "time": "16:14" },
+      { "sender": "me", "text": "You bidding later or just browsing?", "time": "16:15" },
+      { "sender": "Alex", "text": "Thinking of picking up a few lots after sunset. Prices drop in the last round.", "time": "16:17" },
+      { "sender": "me", "text": "Weather’s calm too. Might be busy though.", "time": "16:18" },
+      { "sender": "Alex", "text": "True, especially with the evening crew rolling in with sea bass.", "time": "16:19" },
+      { "sender": "me", "text": "You sticking to ragworm loads or going for the lure sets again?", "time": "16:20" },
+      { "sender": "Alex", "text": "Probably lures tonight. Ragworm sold out at stall #6 anyway.", "time": "16:22" },
+      { "sender": "me", "text": "That silver spinner got you that huge bass last time.", "time": "16:23" },
+      { "sender": "Alex", "text": "Yep. Nearly snapped my arm when it hit. Worth it though.", "time": "16:25" },
+      { "sender": "me", "text": "😂 I remember your midnight texts about it.", "time": "16:26" },
+      { "sender": "Alex", "text": "I was buzzing. Cooked it the next day - unreal.", "time": "16:28" },
+      { "sender": "me", "text": "Jealous. Haven’t had time for fishing or auctions lately.", "time": "16:29" },
+      { "sender": "Alex", "text": "Join me later if you can. I’m checking the late auctions anyway.", "time": "16:30" },
+      { "sender": "me", "text": "Maybe. What time you going in?", "time": "16:31" },
+      { "sender": "Alex", "text": "Around 7. Evening auction kicks off at 7:30.", "time": "16:33" },
+      { "sender": "me", "text": "Alright, I’ll try to make it. Save me a good spot.", "time": "16:34" },
+      { "sender": "Alex", "text": "Already grabbed your usual corner by stall #3 😎", "time": "16:36" },
+      { "sender": "me", "text": "Legend 😂", "time": "16:37" },
+      { "sender": "Alex", "text": "Oysters confirmed - they’re listing a batch from Anglesey in 10 mins.", "time": "16:39" },
+      { "sender": "me", "text": "Nice! If they look good, bid on 18 for me.", "time": "16:40" },
+      { "sender": "Alex", "text": "Will do. Seller says they’re decent size today.", "time": "16:42" },
+      { "sender": "me", "text": "Perfect.", "time": "16:43" },
+      { "sender": "Alex", "text": "Alright, I’ll grab them if the price is right. See you at Billingsgate!", "time": "16:44" }
+    ]
+  }
+]

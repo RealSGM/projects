@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Conversation</title>
+        <%- include("partials/head") %>
+        <link rel="stylesheet" href="/css/shared/direct_messages.css">
+    </head>
+    <body>
+        <%- include("partials/header", { data: data }) %>
+
+        <div id="menu-dropdown" class="menu-dropdown">
+            <a href="/settings"  class="menu-item <%= data.active_tab==='settings'?'active':'' %>"><i class="fa-solid fa-gear"></i> Settings</a>
+            <a href="/account"   class="menu-item <%= data.active_tab==='account'?'active':'' %>"><i class="fa-solid fa-user"></i> Account</a>
+            <a href="/help"      class="menu-item <%= data.active_tab==='help'?'active':'' %>"><i class="fa-solid fa-question"></i> Help</a>
+            <a href="/logout"    class="menu-item <%= data.active_tab==='logout'?'active':'' %>"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+        </div>
+
+        <main class="dm-thread">
+            <div class="messages">
+                <% dm.messages.forEach(msg => { %>
+                    <%- include("partials/single_message", { msg: msg }) %>
+                <% }) %>
+            </div>
+            <div class="input-container">
+                <div class="message-input-bar">
+                    <button class="icon-btn attach-btn"><i class="fa-solid fa-paperclip"></i></button>
+                    <input type="text" placeholder="Type a message..." />
+                    <button class="icon-btn mic-btn"><i class="fa-solid fa-microphone"></i></button>
+                    <button class="send-btn"><i class="fa-solid fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </main>
+
+        <script>
+            window.addEventListener("load", () => {
+                const messages = document.querySelector(".messages");
+                if (messages) {
+                    messages.scrollTop = messages.scrollHeight - messages.clientHeight;
+                }
+            });
+        </script>
+
+        <%- include("partials/dock", { data: data }) %>
+    </body>
+</html>

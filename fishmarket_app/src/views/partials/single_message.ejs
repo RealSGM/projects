@@ -1,0 +1,7 @@
+<div class="message <%= msg.sender === 'me' ? 'sent' : 'received' %>">
+    <div class="bubble">
+        <%= msg.text %>
+        <div class="msg-time"><%= msg.time %></div>
+    </div>
+    <link rel="stylesheet" href="/css/shared/single_message.css">
+</div>

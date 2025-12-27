@@ -1,0 +1,117 @@
+.messages-list {
+    max-width: 550px;
+    margin: 20px auto 0;
+    padding: 0 14px 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    animation: fadeIn 0.35s ease;
+    box-sizing: border-box;
+}
+
+
+.dm-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    padding: 1rem 1.2rem;
+
+    background: #f7f9fa;
+    border: 1px solid rgba(255,255,255,0.55);
+    border-radius: 18px;
+
+    box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+
+    cursor: pointer;
+    transition:
+        transform 0.16s ease,
+        box-shadow 0.16s ease,
+        background 0.25s ease;
+}
+
+.dm-item:hover {
+    transform: translateY(-2px);
+    background: #ffffff;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+}
+
+.dm-item:active {
+    transform: scale(0.97);
+}
+
+.dm-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+
+    background: #2F6F74;
+    color: white;
+
+    font-weight: 800;
+    font-size: 1rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    user-select: none;
+}
+
+.dm-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    min-width: 0;
+}
+
+.dm-top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dm-name {
+    font-weight: 800;
+    color: #2F6F74;
+    font-size: 1rem;
+    letter-spacing: -0.2px;
+}
+
+.dm-time {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #7a9aad;
+}
+
+.dm-preview {
+    color: #4a4f55;
+    font-size: 0.88rem;
+    opacity: 0.85;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 6px;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(8px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 400px) {
+    .dm-avatar {
+        width: 42px;
+        height: 42px;
+        font-size: 0.9rem;
+    }
+    .dm-name {
+        font-size: 0.95rem;
+    }
+    .dm-preview {
+        font-size: 0.85rem;
+    }
+}

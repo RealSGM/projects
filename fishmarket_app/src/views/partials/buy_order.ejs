@@ -1,0 +1,23 @@
+<div class="order-item">
+
+    <div class="order-left">
+        <div class="order-top">
+            <h3 class="order-title"><%= order.fish %></h3>
+
+            <span class="status-badge <%= order.status %>">
+                <%= order.status.charAt(0).toUpperCase() + order.status.slice(1) %>
+            </span>
+        </div>
+
+        <div class="order-meta">
+            <span>Max: $<%= order.maxPrice.toFixed(2) %></span>
+            <span>Qty: <%= order.quantity %></span>
+            <span><%= order.day %></span>
+        </div>
+    </div>
+
+    <button class="delete-order-btn" data-id="<%= order.id %>">
+        Delete
+    </button>
+    <script src="/js/delete_buy_order.js"></script>
+</div>

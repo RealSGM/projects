@@ -1,0 +1,42 @@
+<nav class="dock">
+    <a href="/marketplace" class="dock-item <%= data.active_tab === 'marketplace' ? 'active' : '' %>">
+        <i class="fa-solid fa-shop"></i>
+        <span data-i18n="dock.market">Market</span>
+    </a>
+
+    <% if (data.role === "buyer") { %>
+        <a href="/reserve" class="dock-item <%= data.active_tab === 'reserve' ? 'active' : '' %>">
+            <i class="fa-solid fa-calendar-check"></i>
+            <span data-i18n="dock.reserve">Reserve</span>
+        </a>
+
+        <a href="/checkout" class="dock-item <%= data.active_tab === 'checkout' ? 'active' : '' %>">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span data-i18n="dock.checkout">Checkout</span>
+        </a>
+    <% } else { %>
+        <a href="/listings/self" class="dock-item <%= data.active_tab === 'mylistings' ? 'active' : '' %>">
+            <i class="fa-solid fa-list"></i>
+            <span data-i18n="dock.mylistings">My Listings</span>
+        </a>
+
+        <a href="/listings/create" class="dock-item <%= data.active_tab === 'add-listing' ? 'active' : '' %>">
+            <i class="fa-solid fa-circle-plus"></i>
+            <span data-i18n="dock.add_listing">Add Listing</span>
+        </a>
+    <% } %>
+
+    
+    <a href="/trends" class="dock-item <%= data.active_tab === 'trends' ? 'active' : '' %>">
+        <i class="fa-solid fa-chart-line"></i>
+        <span data-i18n="dock.trends">Trends</span>
+    </a>
+
+    <a href="/messages" class="dock-item <%= data.active_tab === 'messages' ? 'active' : '' %>">
+    <div class="icon-wrapper">
+        <i class="fa-solid fa-envelope"></i>
+        <span class="notification-badge">3</span>
+    </div>
+    <span data-i18n="dock.messages">Messages</span>
+    </a>
+</nav>

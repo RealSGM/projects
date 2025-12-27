@@ -1,0 +1,270 @@
+.checkout-container {
+    max-width: 600px;
+    margin: 20px auto 90px;
+    padding: 1.2rem;
+    background: #f7f9fa;
+    border-radius: 18px;
+    border: 1px solid rgba(255,255,255,0.6);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+    animation: fadeSlide 0.45s ease forwards;
+    transform: translateY(10px);
+    opacity: 0;
+}
+
+@keyframes fadeSlide {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.shop-title {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #2F6F74;
+    text-align: center;
+    margin-bottom: 0.3rem;
+}
+
+.checkout-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #5a7fa1;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.basket-items {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    margin-bottom: 1.2rem;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.basket-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    gap: 12px;
+    padding: 0.7rem 0;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+
+.basket-item:last-child {
+    border-bottom: none;
+}
+
+.basket-item img {
+    width: 55px;
+    height: 55px;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.item-info {
+    flex: 1;
+}
+
+.item-info strong {
+    font-size: 1rem;
+    color: #2F6F74;
+}
+
+.qty-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 6px;
+}
+
+.qty-row span {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #2F6F74;
+    background: #e0f0f1;
+    padding: 0.25rem 0.5rem;
+    border-radius: 6px;
+}
+
+.price {
+    font-weight: 700;
+    font-size: 1rem;
+    color: #083f5c;
+}
+
+.subtotal {
+    text-align: right;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #083f5c;
+    margin-bottom: 1.3rem;
+}
+
+.payment-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.pay {
+    padding: 1rem;
+    border-radius: 14px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.18s ease, box-shadow 0.22s ease;
+}
+
+.pay:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 14px rgba(0,0,0,0.12);
+}
+
+.pay:active {
+    transform: scale(0.94);
+    opacity: 0.85;
+}
+
+.pay.card {
+    background: #ffffff;
+    border: 1px solid #2F6F74;
+    color: #2F6F74;
+}
+
+.pay.apple {
+    background: #000;
+    color: #fff;
+}
+
+.pay.paypal {
+    background: #ffc439;
+    color: #111;
+}
+
+@media (max-width: 480px) {
+    .checkout-container {
+        margin: 20px 14px 90px;
+    }
+}
+
+.qty-pill {
+    display: inline-flex;
+    align-items: center;
+    border: 2px solid #2F6F74;
+    border-radius: 16px;              
+    padding: 2px 6px;           
+    gap: 8px;
+    background: #e7f4f5;       
+    height: 20px;               
+}
+
+.pill-btn {
+    background: none;
+    border: none;
+    font-size: 1rem;                 
+    font-weight: 700;
+    color: #2F6F74;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+    width: 18px;                   
+    text-align: center;
+    user-select: none;
+}
+
+.pill-value {
+    font-size: 1rem;
+    font-weight: 700;
+    width: 24px;                     
+    text-align: center;
+    color: #2F6F74;
+}
+.delete-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FF0000;
+}
+
+.delete-btn svg,
+.delete-btn {
+    transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.delete-btn:hover {
+    transform: scale(1.2);
+    opacity: 0.8;
+}
+
+.delete-btn:active {
+    transform: scale(0.9);
+}
+
+.undo-bar {
+    background: #ffebe8;
+    border: 1px solid #ffb3aa;
+    padding: 12px 16px;            
+    border-radius: 12px;
+    margin-top: 16px;            
+    margin-bottom: 20px;        
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.undo-bar.hidden {
+    display: none;
+}
+
+#undo-btn {
+    background: #d9534f;
+    border: none;
+    padding: 8px 14px;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.undo-bar button {
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+}
+
+.payment-popup {
+    position: fixed;
+    bottom: 90px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #2F6F74;
+    color: white;
+    padding: 14px 22px;
+    border-radius: 16px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    z-index: 9999;
+}
+
+.payment-popup.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-6px);
+}
+
+.hidden {
+    display: none;
+}

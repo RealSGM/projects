@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Messages</title>
+        <%- include("partials/head") %>
+        <link rel="stylesheet" href="/css/messages.css">
+    </head>
+    <body>
+
+        <%- include("partials/header", { data: data }) %>
+
+        <main class="messages-list" id="messagesList">
+        </main>
+
+        <%- include("partials/dock", { data: data }) %>
+        <script src="/js/messages.js" defer></script>
+    </body>
+</html>

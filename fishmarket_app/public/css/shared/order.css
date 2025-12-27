@@ -1,0 +1,126 @@
+.order-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 0.6rem;
+}
+
+.order-card {
+    background: white;
+    border-radius: 14px;
+    border: 1px solid #dbe7ec;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.06);
+    overflow: hidden;
+    padding-bottom: 1rem;
+}
+
+.toggle-header {
+    display: flex;
+    align-items: center;
+    padding: 1.2rem 1.4rem;
+    cursor: pointer;
+    gap: 1rem;
+}
+
+.toggle-header .arrow {
+    font-size: 1rem;
+    color: #2F6F74;
+    transition: transform 0.25s ease;
+}
+
+.toggle-header .arrow.open {
+    transform: rotate(180deg);
+}
+
+.toggle-header > div:first-child {
+    flex-grow: 1;
+}
+
+.order-header h4 {
+    font-size: 1.1rem;
+    color: #2F6F74;
+    font-weight: 800;
+    margin-bottom: 0.25rem;
+}
+
+.order-date {
+    font-size: 0.85rem;
+    color: #5a7fa1;
+}
+
+.order-total {
+    margin-right: 0.3rem;
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: #2F6F74;
+}
+
+
+.order-content {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 1.4rem;
+    transition: max-height 0.35s ease, padding 0.3s ease;
+}
+
+.order-content.open {
+    padding: 0.7rem 1.4rem 1.2rem 1.4rem;
+}
+
+.product-row-extended {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eef3f5;
+}
+
+.product-row-extended:last-child {
+    border-bottom: none;
+}
+
+.product-thumb {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.product-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
+.product-name {
+    color: #2F6F74;
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+
+.product-price {
+    font-size: 0.85rem;
+    color: #5a7fa1;
+}
+
+.product-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    min-width: 70px;
+}
+
+.product-meta .qty {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #2F6F74;
+}
+
+.product-meta .subtotal {
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: #2F6F74;
+}

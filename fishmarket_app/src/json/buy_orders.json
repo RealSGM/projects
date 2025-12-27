@@ -1,0 +1,64 @@
+[
+  {
+    "id": 1,
+    "fish": "Salmon",
+    "maxPrice": 12.5,
+    "quantity": 3,
+    "day": "2025-03-14",
+    "status": "waiting",
+    "is_deleted": true
+  },
+  {
+    "id": 2,
+    "fish": "Cod",
+    "maxPrice": 7.2,
+    "quantity": 5,
+    "day": "2025-03-15",
+    "status": "on-the-way",
+    "is_deleted": true
+  },
+  {
+    "id": 3,
+    "fish": "Tuna",
+    "maxPrice": 20,
+    "quantity": 1,
+    "day": "2025-03-12",
+    "status": "filled",
+    "is_deleted": true
+  },
+  {
+    "id": 4,
+    "fish": "Swordfish",
+    "maxPrice": 123,
+    "quantity": 456,
+    "day": "2025-11-30",
+    "status": "waiting",
+    "is_deleted": true
+  },
+  {
+    "id": 5,
+    "fish": "Herring",
+    "maxPrice": 1,
+    "quantity": 1222,
+    "day": "2001-01-01",
+    "status": "waiting",
+    "is_deleted": true
+  },
+  {
+    "id": 6,
+    "fish": "Mackerel",
+    "maxPrice": 123,
+    "quantity": 1123,
+    "day": "2025-12-26",
+    "status": "waiting",
+    "is_deleted": true
+  },
+  {
+    "id": 7,
+    "fish": "Herring",
+    "maxPrice": 15,
+    "quantity": 19,
+    "day": "2025-12-19",
+    "status": "waiting"
+  }
+]
